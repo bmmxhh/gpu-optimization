@@ -102,3 +102,6 @@ DerivedDataCache/*
 /Tools/NVIDIA-DLSS/20221206-DLSS-UE5.0.2+-Plugin/DLSSMoviePipelineSupport/Intermediate/Build/Win64
 /Tools/NVIDIA-DLSS/20221206-DLSS-UE5.0.2+-Plugin/NIS/Binaries/Win64
 /Tools/NVIDIA-DLSS/20221206-DLSS-UE5.0.2+-Plugin/NIS/Intermediate/Build/Win64
+/GpuOptimization/Binaries/Win64
+/GpuOptimization/Intermediate
+/GpuOptimization/Saved
