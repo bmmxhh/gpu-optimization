@@ -88,3 +88,17 @@ DerivedDataCache/*
 /Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-500/FSR2MovieRenderPipeline/Intermediate/Build/Win64
 /Tools/AMD-FSR/FSRPlugin/FSR/Binaries/Win64
 /Tools/AMD-FSR/FSRPlugin/FSR/Intermediate/Build/Win64/UE4
+/Tools/NVIDIA-DLSS/20220623_DLSS_Plugin_UE4.26/DLSS/Binaries/Win64
+/Tools/NVIDIA-DLSS/20220623_DLSS_Plugin_UE4.26/DLSS/Intermediate/Build
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE4.27-Plugin/DLSS/Binaries/Win64
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE4.27-Plugin/DLSS/Intermediate/Build
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE4.27-Plugin/DLSSMoviePipelineSupport/Binaries/Win64
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE4.27-Plugin/DLSSMoviePipelineSupport/Intermediate/Build/Win64
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE4.27-Plugin/NIS/Binaries/Win64
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE4.27-Plugin/NIS/Intermediate/Build
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE5.0.2+-Plugin/DLSS/Binaries/Win64
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE5.0.2+-Plugin/DLSS/Intermediate/Build/Win64
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE5.0.2+-Plugin/DLSSMoviePipelineSupport/Binaries/Win64
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE5.0.2+-Plugin/DLSSMoviePipelineSupport/Intermediate/Build/Win64
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE5.0.2+-Plugin/NIS/Binaries/Win64
+/Tools/NVIDIA-DLSS/20221206-DLSS-UE5.0.2+-Plugin/NIS/Intermediate/Build/Win64
