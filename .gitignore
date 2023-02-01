@@ -72,3 +72,7 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+/Tools/RTXGI/RTXGI_UE4_Binary_Plugin_v1.1.50/RTXGI_UE4_Binary_Plugin_v1.1.50/UE4/RTXGI/Binaries/Win64
+/Tools/RTXGI/RTXGI_UE4_Binary_Plugin_v1.1.50/RTXGI_UE4_Binary_Plugin_v1.1.50/UE4/RTXGI/Intermediate/Build
+/Tools/RTXGI/RTXGI_UE5_Binary_Plugin_v1.1.50/RTXGI_UE5_Binary_Plugin_v1.1.50/UE5/RTXGI/Binaries/Win64
+/Tools/RTXGI/RTXGI_UE5_Binary_Plugin_v1.1.50/RTXGI_UE5_Binary_Plugin_v1.1.50/UE5/RTXGI/Intermediate/Build/Win64
