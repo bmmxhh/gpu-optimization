@@ -76,3 +76,15 @@ DerivedDataCache/*
 /Tools/RTXGI/RTXGI_UE4_Binary_Plugin_v1.1.50/RTXGI_UE4_Binary_Plugin_v1.1.50/UE4/RTXGI/Intermediate/Build
 /Tools/RTXGI/RTXGI_UE5_Binary_Plugin_v1.1.50/RTXGI_UE5_Binary_Plugin_v1.1.50/UE5/RTXGI/Binaries/Win64
 /Tools/RTXGI/RTXGI_UE5_Binary_Plugin_v1.1.50/RTXGI_UE5_Binary_Plugin_v1.1.50/UE5/RTXGI/Intermediate/Build/Win64
+/Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-426/FSR2/Binaries/Win64
+/Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-426/FSR2/Intermediate/Build/Win64
+/Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-427/FSR2/Binaries/Win64
+/Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-427/FSR2/Intermediate/Build/Win64
+/Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-427/FSR2MovieRenderPipeline/Binaries/Win64
+/Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-427/FSR2MovieRenderPipeline/Intermediate/Build/Win64
+/Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-500/FSR2/Binaries/Win64
+/Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-500/FSR2/Intermediate/Build/Win64
+/Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-500/FSR2MovieRenderPipeline/Binaries/Win64
+/Tools/AMD-FSR/FSR2-UE-2-1-2/FSR2 2.1.2/FSR2-500/FSR2MovieRenderPipeline/Intermediate/Build/Win64
+/Tools/AMD-FSR/FSRPlugin/FSR/Binaries/Win64
+/Tools/AMD-FSR/FSRPlugin/FSR/Intermediate/Build/Win64/UE4

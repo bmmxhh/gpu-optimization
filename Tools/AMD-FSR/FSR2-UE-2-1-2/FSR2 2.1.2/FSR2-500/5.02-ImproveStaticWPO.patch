@@ -1,0 +1,64 @@
+From 7d722383aea9f8644bd5ba9def689aa2105257b8 Mon Sep 17 00:00:00 2001
+From: msattert <Mark.Satterthwaite@amd.com>
+Date: Fri, 19 Aug 2022 16:30:58 -0400
+Subject: [PATCH] Change the engine to allow WPO materials to write velocity
+ even when marked as Static - this will come with a perf. cost (as more WPO
+ objects render velocity) but is necessary for FSR2 to function properly.
+
+---
+ Engine/Source/Runtime/Engine/Private/PrimitiveSceneProxy.cpp | 2 +-
+ Engine/Source/Runtime/Engine/Public/PrimitiveSceneProxy.h    | 2 +-
+ Engine/Source/Runtime/Renderer/Private/SceneVisibility.cpp   | 4 ++++
+ 3 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/Engine/Source/Runtime/Engine/Private/PrimitiveSceneProxy.cpp b/Engine/Source/Runtime/Engine/Private/PrimitiveSceneProxy.cpp
+index db3c3eb3b0..f794a16108 100644
+--- a/Engine/Source/Runtime/Engine/Private/PrimitiveSceneProxy.cpp
++++ b/Engine/Source/Runtime/Engine/Private/PrimitiveSceneProxy.cpp
+@@ -333,7 +333,7 @@ FPrimitiveSceneProxy::FPrimitiveSceneProxy(const UPrimitiveComponent* InComponen
+ 	FObjectCacheEventSink::NotifyUsedMaterialsChanged_Concurrent(InComponent, UsedMaterialsForVerification);
+ #endif
+ 
+-	if (!bAlwaysHasVelocity && IsMovable() && VertexDeformationOutputsVelocity())
++	if (!bAlwaysHasVelocity && (IsMovable() || CVarVelocityEnableVertexDeformation.GetValueOnAnyThread() == 1) && VertexDeformationOutputsVelocity())
+ 	{
+ 		ERHIFeatureLevel::Type FeatureLevel = GetScene().GetFeatureLevel();
+ 
+diff --git a/Engine/Source/Runtime/Engine/Public/PrimitiveSceneProxy.h b/Engine/Source/Runtime/Engine/Public/PrimitiveSceneProxy.h
+index ce54212039..6bbd90cdf8 100644
+--- a/Engine/Source/Runtime/Engine/Public/PrimitiveSceneProxy.h
++++ b/Engine/Source/Runtime/Engine/Public/PrimitiveSceneProxy.h
+@@ -714,7 +714,7 @@ public:
+ 	/** Returns whether draws velocity in base pass. */
+ 	inline bool DrawsVelocity() const
+ 	{
+-		return IsMovable() || IsBeingMovedByEditor();
++		return IsMovable() || IsBeingMovedByEditor() || AlwaysHasVelocity();
+ 	}
+ 
+ #if WITH_EDITOR
+diff --git a/Engine/Source/Runtime/Renderer/Private/SceneVisibility.cpp b/Engine/Source/Runtime/Renderer/Private/SceneVisibility.cpp
+index c517e51165..9a6ce958c0 100644
+--- a/Engine/Source/Runtime/Renderer/Private/SceneVisibility.cpp
++++ b/Engine/Source/Runtime/Renderer/Private/SceneVisibility.cpp
+@@ -2323,6 +2323,9 @@ struct FRelevancePacket
+ 
+ 	void ComputeRelevance()
+ 	{
++		static const auto CVarVertexDeformationOutputsVelocity = IConsoleManager::Get().FindConsoleVariable(TEXT("r.Velocity.EnableVertexDeformation"));
++		bool const bWPORendersVelocity = (CVarVertexDeformationOutputsVelocity && CVarVertexDeformationOutputsVelocity->GetInt() == 1);
++
+ 		CombinedShadingModelMask = 0;
+ 		bSceneHasSkyMaterial = 0;
+ 		bHasSingleLayerWaterMaterial = 0;
+@@ -2340,6 +2343,7 @@ struct FRelevancePacket
+ 			FPrimitiveSceneInfo* PrimitiveSceneInfo = Scene->Primitives[BitIndex];
+ 			FPrimitiveViewRelevance& ViewRelevance = const_cast<FPrimitiveViewRelevance&>(View.PrimitiveViewRelevanceMap[BitIndex]);
+ 			ViewRelevance = PrimitiveSceneInfo->Proxy->GetViewRelevance(&View);
++			ViewRelevance.bVelocityRelevance |= (PrimitiveSceneInfo->Proxy->AlwaysHasVelocity() && !ViewRelevance.HasTranslucency() && !ViewRelevance.HasVelocity() && bWPORendersVelocity);
+ 			ViewRelevance.bInitializedThisFrame = true;
+ 
+ 			const bool bStaticRelevance = ViewRelevance.bStaticRelevance;
+-- 
+2.37.0.windows.1
+
