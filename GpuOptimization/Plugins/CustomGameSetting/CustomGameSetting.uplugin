@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "CustomGameSetting",
+	"Description": "Custom Game Setting",
+	"Category": "Other",
+	"CreatedBy": "Bmmxhh",
+	"CreatedByURL": "https://github.com/bmmxhh",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "CustomGameSetting",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

@@ -105,3 +105,5 @@ DerivedDataCache/*
 /GpuOptimization/Binaries/Win64
 /GpuOptimization/Intermediate
 /GpuOptimization/Saved
+/GpuOptimization/Plugins/CustomGameSetting/Binaries/Win64
+/GpuOptimization/Plugins/CustomGameSetting/Intermediate/Build
